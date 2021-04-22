@@ -68,16 +68,14 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST'){
     </style>
 </head>
 <body>
-<?php if(!isset($_SESSION['username'])):
-    redirect_to('LoginRYAN.php');
-endif;?>
+
 
 
 <a style = "margin: auto;" href="../AdminMenu.php"><img src="../imgs/logo.jpg" alt="logo"></a><?php include('../sharesession.php'); ?><br><br>
 
 <h2>Registration Form</h2>
 
-<form action="<?php echo $_SERVER["PHP_SELF"]?>" method="post">
+<form action="<?php  echo $_SERVER["PHP_SELF"]; //afdaadsadfsfasdfdasf?>" method="post">
 
         <label for="">UserName</label>
         <input type="text" name="username" value="<?php echo isFormValidated()? '': $_POST['username'] ?>">
