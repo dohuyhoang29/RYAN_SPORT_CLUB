@@ -1,6 +1,6 @@
 <?php
     require_once('Admin/DatabaseRYAN.php');
-    require_once('initialize.php');//khang nghien vaof beo
+    require_once('initialize.php');//khang nghien vaof beo gay
 ?>
 
 <!DOCTYPE html>
