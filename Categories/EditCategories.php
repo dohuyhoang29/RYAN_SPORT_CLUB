@@ -12,7 +12,7 @@ function isFormValidated(){
 function checkForm(){
     global $errors;
     if(empty($_POST['name'])  ){
-        $errors[] = "Name không được bỏ trống.";
+        $errors[] = "Name must be required.";
     }
     
 }
