@@ -92,7 +92,11 @@
         <input type="text" name="Famous_Players" value="<?php echo isFormValidated() ? '' : $_POST['Famous_Players']; ?>"><br>
 
         <label for="CategoryID">CategoryID </label>
-        <input type="text" name="CategoryID" value="<?php echo isFormValidated() ? '' : $_POST['CategoryID']; ?>"><br>
+        <select name="CategoryID">
+            <option value="1"<?php if(!empty($_POST['CategoryID']) && $_POST['CategoryID'] =='1') echo 'selected' ?>>Indoor Sports</option>              
+            <option value="2"<?php if(!empty($_POST['CategoryID']) && $_POST['CategoryID'] =='2') echo 'selected' ?>>Outdoor Sports</option>
+            <option value="3"<?php if(!empty($_POST['CategoryID']) && $_POST['CategoryID'] =='3') echo 'selected' ?>>Recreation</option>   
+        </select>
 
         <input style = "width: 30%; margin-left: 160px;" type="submit" name="submit" value="Create">
     </form>
@@ -107,17 +111,8 @@
             $service['CategoryID'] = $_POST['CategoryID'];
             
             $result = insert_service($service);
-            // redirect_to('IndexService.php');
+            redirect_to('IndexService.php');
         ?>
-
-        <h2>A new Service has been created</h2>
-        <ul>
-            <?php
-                foreach($service as $key => $value){
-                    echo "<li>" , $key . " : " . $value, "</li>";
-                }
-            ?>
-        </ul>
     <?php endif; ?>
 
     <a href="IndexService.php">Back to View</a>

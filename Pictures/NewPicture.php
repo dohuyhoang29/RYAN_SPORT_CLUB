@@ -90,16 +90,10 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST'){
             ?php  echo isFormValidated()? '': $_POST['ServiceID'] ?>"> -->
         <label for="ServiceID">Subject:</label>
             <select name="ServiceID">
-            <option value="1"
-            <?php if(!empty($_POST['ServiceID']) && $_POST['ServiceID'] =='1') echo 'selected' ?>
-            >Indoor Sports</option>              
-            <option value="2"
-            <?php if(!empty($_POST['ServiceID']) && $_POST['ServiceID'] =='2') echo 'selected' ?>
-            >Outdoor Sports</option>
-            <option value="3"
-            <?php if(!empty($_POST['ServiceID']) && $_POST['ServiceID'] =='3') echo 'selected' ?>
-            >Recreation</option>                        
-            </select>       
+            <option value="1"<?php if(!empty($_POST['ServiceID']) && $_POST['ServiceID'] =='1') echo 'selected' ?>>Indoor Sports</option>              
+            <option value="2"<?php if(!empty($_POST['ServiceID']) && $_POST['ServiceID'] =='2') echo 'selected' ?>>Outdoor Sports</option>
+            <option value="3"<?php if(!empty($_POST['ServiceID']) && $_POST['ServiceID'] =='3') echo 'selected' ?>>Recreation</option>                        
+        </select>       
         <br><br>
         <input type="file" name="URL" id="URL"
         value = "<?php echo isFormValidated()? $_POST['URL']: $_POST['URL'] ?>">
