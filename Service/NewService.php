@@ -91,7 +91,7 @@
         <label for="famous">Famous Players</label>
         <input type="text" name="Famous_Players" value="<?php echo isFormValidated() ? '' : $_POST['Famous_Players']; ?>"><br>
 
-        <label for="CategoryID">CategoryID </label>
+        <label for="CategoryID">Categories </label>
         <select name="CategoryID">
             <option value="1"<?php if(!empty($_POST['CategoryID']) && $_POST['CategoryID'] =='1') echo 'selected' ?>>Indoor Sports</option>              
             <option value="2"<?php if(!empty($_POST['CategoryID']) && $_POST['CategoryID'] =='2') echo 'selected' ?>>Outdoor Sports</option>
