@@ -68,14 +68,13 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST'){
     </style>
 </head>
 <body>
-
-
+<!-- hoang ngu beo nhu lon -->
 
 <a style = "margin: auto;" href="../AdminMenu.php"><img src="../imgs/logo.jpg" alt="logo"></a><?php include('../sharesession.php'); ?><br><br>
 
 <h2>Registration Form</h2>
 
-<form action="<?php  echo $_SERVER["PHP_SELF"]; //afdaadsadfsfasdfdasf?>" method="post">
+<form action="<?php  echo $_SERVER["PHP_SELF"];?>" method="post">
 
         <label for="">UserName</label>
         <input type="text" name="username" value="<?php echo isFormValidated()? '': $_POST['username'] ?>">
