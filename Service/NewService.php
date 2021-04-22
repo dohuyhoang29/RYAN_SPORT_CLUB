@@ -92,8 +92,11 @@
         <input type="text" name="Famous_Players" value="<?php echo isFormValidated() ? '' : $_POST['Famous_Players']; ?>"><br>
 
         <label for="CategoryID">CategoryID </label>
-        <input type="text" name="CategoryID" value="<?php echo isFormValidated() ? '' : $_POST['CategoryID']; ?>"><br>
-
+        <select name="CategoryID">`
+        <option value="1"<?php if(!empty($_POST['ServiceID']) && $_POST['ServiceID'] =='1') echo 'selected' ?>>Indoor Sports</option>              
+        <option value="2"<?php if(!empty($_POST['ServiceID']) && $_POST['ServiceID'] =='2') echo 'selected' ?>>Outdoor Sports</option>
+        <option value="3"<?php if(!empty($_POST['ServiceID']) && $_POST['ServiceID'] =='3') echo 'selected' ?>>Recreation</option>
+        </select>
         <input style = "width: 30%; margin-left: 160px;" type="submit" name="submit" value="Create">
     </form>
 
