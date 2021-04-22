@@ -75,7 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST'){
 
 <h2>Registration Form</h2>
 
-<form action="<?php  echo $_SERVER["PHP_SELF"]; //afdasfasdfdasf?>" method="post">
+<form action="<?php  echo $_SERVER["PHP_SELF"]; //afdaadsadfsfasdfdasf?>" method="post">
 
         <label for="">UserName</label>
         <input type="text" name="username" value="<?php echo isFormValidated()? '': $_POST['username'] ?>">
