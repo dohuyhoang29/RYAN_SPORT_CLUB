@@ -38,7 +38,6 @@
     <a href="NewService.php">Create a new Service</a>
     <table class="list">
         <tr>
-            <th>ServiceID</th>
             <th>Name</th>
             <th>Rules</th>
             <th>Time</th>
@@ -56,12 +55,11 @@
         ?>
 
         <tr>
-            <td><?php echo $service['ServiceID']; ?></td>
-            <td><?php echo $service['Name']; ?></td>
+            <td><?php echo $service['name']; ?></td>
             <td><?php echo $service['Rules']; ?></td>
             <td><?php echo $service['Time']; ?></td>
             <td><?php echo $service['Famous_Players']; ?></td>
-            <td><?php echo $service['CategoryID']; ?></td>
+            <td><?php echo $service['Name']; ?></td>
             <td><a href="<?php echo "EditService.php?ServiceID=". $service['ServiceID']; ?>">Edit</a></td>
             <td><a href="<?php echo "DeleteService.php?ServiceID=". $service['ServiceID']; ?>">Delete</a></td>
         </tr>

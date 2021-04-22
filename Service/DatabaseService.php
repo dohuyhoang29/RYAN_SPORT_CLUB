@@ -50,7 +50,8 @@
     function find_all_service(){
         global $db;
 
-        $sql = "SELECT * FROM Service ";
+        $sql = "SELECT s.name, s.Rules, s.Time, s.Famous_Players, c.Name
+                FROM service s INNER JOIN categories c ON s.CategoryID = c.CategoryID; ";
         $result = mysqli_query($db, $sql);
 
         return $result;
