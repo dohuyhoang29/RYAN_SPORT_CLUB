@@ -39,7 +39,7 @@
         $sql .= "'" . $service['Name']       . "', ";
         $sql .= "'" . $service['Rules']      . "', ";
         $sql .= "'" . $service['Time']       . "', ";
-        $sql .= "'" . $service['Famous_Players']     . "', ";
+        $sql .= "'" . $service['Famous_Players'] . "', ";
         $sql .= "'" . $service['CategoryID'] . "' ";
         $sql .= ");";
         $result = mysqli_query($db, $sql);
@@ -50,7 +50,7 @@
     function find_all_service(){
         global $db;
 
-        $sql = "SELECT s.name, s.Rules, s.Time, s.Famous_Players, c.Name
+        $sql = "SELECT s.ServiceID, s.name, s.Rules, s.Time, s.Famous_Players, c.Name
                 FROM service s INNER JOIN categories c ON s.CategoryID = c.CategoryID; ";
         $result = mysqli_query($db, $sql);
 
@@ -72,16 +72,21 @@
         return $service;
     }
 
+    // UPDATE service s INNER JOIN categories c ON s.CategoryID = c.CategoryID
+    // SET s.Name = 'hoang', s.Rules = 'deo biet', s.Time = '123', s.Famous_Players = 'Hoang super pro', s.CategoryID = '1'
+    // WHERE s.ServiceID = '5';
+
     function update_service($service){
         global $db;
 
-        $sql = "UPDATE Service SET ";
-        $sql .= "Name = '" . $service['Name'] . "', ";
-        $sql .= "Rules = '". $service['Rules'] . "', ";
-        $sql .= "Time = '" . $service['Time'] . "', ";
-        $sql .= "Famous_Players = '" . $service['Famous_Players'] . "', ";
-        $sql .= "CategoryID = '" . $service['CategoryID'] . "' ";
-        $sql .= "WHERE ServiceID = '" . $service['ServiceID'] . "' ";
+        $sql = "UPDATE service s INNER JOIN categories c ON s.CategoryID = c.CategoryID ";
+        $sql .= "SET ";
+        $sql .= "s.Name = '" . $service['Name'] . "', ";
+        $sql .= "s.Rules = '" . $service['Rules'] ."', ";
+        $sql .= "s.Time = '" . $service['Time'] . "', ";
+        $sql .= "s.Famous_Players = '" . $service['Famous_Players'] . "', ";
+        $sql .= "s.CategoryID = '" . $service['CategoryID'] . "' ";
+        $sql .= "WHERE s.ServiceID = '" . $service['ServiceID'] . "' ";
         $sql .= "LIMIT 1;";
 
         $result = mysqli_query($db, $sql);
