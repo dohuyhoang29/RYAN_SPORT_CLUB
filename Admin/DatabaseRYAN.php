@@ -44,7 +44,7 @@
         if($result) {
             return true;
         } else {
-            echo "USERNAME Da Ton Tai!";
+            echo "USERNAME already!";
             db_disconnect($db);
             exit;
         }
