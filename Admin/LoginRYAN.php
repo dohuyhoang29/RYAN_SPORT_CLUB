@@ -95,7 +95,7 @@ function isFormValidated(){
                 redirect_to('../AdminMenu.php');
                 // echo "Ban Da Dang Nhap Thanh Cong";
             }else{
-                echo "Username Hoac Password Ko Dung!";
+                echo "Username or Password wrong!";
             }
         }
    ?>

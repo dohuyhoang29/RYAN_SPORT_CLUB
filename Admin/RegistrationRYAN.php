@@ -33,10 +33,10 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST'){
         $errors[] = 'Phone is required';
     }else{
         if(!empty($_POST['phone'])&& !is_numeric($_POST['phone']) == 1){
-            $errors[] = "Phone Ko Duoc La Chu!";
+            $errors[] = "Phone must be number!";
         }else{
             if(!empty($_POST['phone'])&& count((str_split($_POST['phone'])))!=10){
-                $errors[] = 'Phone co 10 so!';
+                $errors[] = 'Phone must have 10 number!';
             }
         }
     }
