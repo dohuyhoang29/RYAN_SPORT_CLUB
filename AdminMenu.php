@@ -1,6 +1,6 @@
 <?php
     require_once('Admin/DatabaseRYAN.php');
-    require_once('initialize.php');
+    require_once('initialize.php');//ajfdhs
 ?>
 
 <!DOCTYPE html>
