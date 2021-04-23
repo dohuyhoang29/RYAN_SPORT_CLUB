@@ -32,29 +32,7 @@
     <meta charset="UTF-8">
     <title>Create a new Service</title>
     <style>
-        form{
-            border: 3px solid green;
-            padding: 10px;
-            width: 30%;
-            
-        }
-
-        label{
-            font-weight: bold;
-            float: left;
-            padding-bottom: 5px;
-            width: 30%;
-        }
-
-        input{
-           width: 60%;
-            margin: 5px;
-        }
-
-        a{
-            margin-left: auto;
-            margin-right: auto;
-        }
+        
     </style>
 </head>
 <body>
@@ -78,24 +56,31 @@
     <a href="../AdminMenu.php"><img src="../imgs/logo.jpg" alt="logo"></a><?php include('../sharesession.php'); ?>
 
     <h1>Create a new Service</h1>
-    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-        <label for="name">Name </label>
-        <input type="text" name="Name" value="<?php echo isFormValidated() ? '' : $_POST['Name']; ?>"><br>
+    
+    <div>
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+            <label for="name">Name </label>
+            <input type="text" name="Name" value="<?php echo isFormValidated() ? '' : $_POST['Name']; ?>"><br>
+            
+            <label for="CategoryID">Categories </label>
+            <select name="CategoryID">
+                <option value="1"<?php if(!empty($_POST['CategoryID']) && $_POST['CategoryID'] =='1') echo 'selected' ?>>Indoor Sports</option>              
+                <option value="2"<?php if(!empty($_POST['CategoryID']) && $_POST['CategoryID'] =='2') echo 'selected' ?>>Outdoor Sports</option>
+                <option value="3"<?php if(!empty($_POST['CategoryID']) && $_POST['CategoryID'] =='3') echo 'selected' ?>>Recreation</option>   
+            </select><br>
+            
+            <label for="time">Time </label>
+            <input type="text" name="Time" value="<?php echo isFormValidated() ? '' : $_POST['Time']; ?>"><br>
 
-        <label for="rules">Rules </label>
-        <input type="text" name="Rules" value="<?php echo isFormValidated() ? '' : $_POST['Rules']; ?>"><br>
+            <label for="famous">Famous Players</label>
+            <input type="text" name="Famous_Players" value="<?php echo isFormValidated() ? '' : $_POST['Famous_Players']; ?>"><br>
 
-        <label for="time">Time </label>
-        <input type="text" name="Time" value="<?php echo isFormValidated() ? '' : $_POST['Time']; ?>"><br>
+            <label for="rules">Rules </label>
+            <textarea name="Rules" cols="30" rows="10"><?php echo isFormValidated() ? '' : $_POST['Rules']; ?></textarea><br>
 
-        <label for="famous">Famous Players</label>
-        <input type="text" name="Famous_Players" value="<?php echo isFormValidated() ? '' : $_POST['Famous_Players']; ?>"><br>
-
-        <label for="CategoryID">CategoryID </label>
-        <input type="text" name="CategoryID" value="<?php echo isFormValidated() ? '' : $_POST['CategoryID']; ?>"><br>
-
-        <input style = "width: 30%; margin-left: 160px;" type="submit" name="submit" value="Create">
-    </form>
+            <input type="submit" name="submit" value="Create">
+        </form>
+    </div>
 
     <?php if($_SERVER['REQUEST_METHOD'] == 'POST' && isFormValidated()): ?>
         <?php 
@@ -107,17 +92,8 @@
             $service['CategoryID'] = $_POST['CategoryID'];
             
             $result = insert_service($service);
-            // redirect_to('IndexService.php');
+            redirect_to('IndexService.php');
         ?>
-
-        <h2>A new Service has been created</h2>
-        <ul>
-            <?php
-                foreach($service as $key => $value){
-                    echo "<li>" , $key . " : " . $value, "</li>";
-                }
-            ?>
-        </ul>
     <?php endif; ?>
 
     <a href="IndexService.php">Back to View</a>
