@@ -41,8 +41,8 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST'){
     if(!isset($_GET['PictureID'])) {
         redirect_to('IndexPicture.php');
     }
-    $id = $_GET['PictureID'];
-    $picture = find_Picture_by_id($id);
+    $pictureID = $_GET['PictureID'];
+    $picture = find_picture_by_id($pictureID);
 }
 
 ?>
@@ -127,7 +127,6 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST'){
       
         
         <input type="submit" name="submit" value="Submit">
-        <input type="reset" name="reset" value="Reset">
     
     </form>
     
