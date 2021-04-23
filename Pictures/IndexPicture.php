@@ -6,7 +6,7 @@ require_once('../initialize.php');
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Book</title>
+    <title>view Pictures</title>
     <style>
         table {
         border-collapse: collapse;
@@ -27,14 +27,10 @@ require_once('../initialize.php');
         color: white;
         text-align: center;
         }
-        img{s
+        img{
             text-align:array_multisort;
             height: 150px;
             width: 150px;
-        }
-        ass{
-            width: 40%;
-            height: 40%;
         }
         
     </style>
@@ -64,8 +60,8 @@ require_once('../initialize.php');
                 <td><?php echo $picture['Name']; ?></td>
                 <td class="img"><img src="<?php echo '../imgs/'.$picture['URL']; ?>"></td>
                 <td><?php echo $picture['name']; ?></td>
-                <td><a href="<?php echo 'EditPicture.php?PictureID='.$picture['PictureID']; ?>">Edit</a></td>
-                <td><a href="<?php echo 'DeletePicture.php?PictureID='.$picture['PictureID']; ?>">Delete</a></td>
+                <td><a href="<?php echo " EditPicture.php ? PictureID=".$picture['PictureID']; ?>">Edit</a></td>
+                <td><a href="<?php echo " DeletePicture.php ? PictureID=".$picture['PictureID']; ?>">Delete</a></td>
             </tr>
         <?php 
         endfor; 

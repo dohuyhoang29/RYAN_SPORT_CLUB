@@ -10,8 +10,8 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST'){
     if(!isset($_GET['PictureID'])) {
         redirect_to('IndexPicture.php');
     }
-    $id = $_GET['PictureID'];
-    $Picture = find_picture_by_id($id);
+    $pictureID = $_GET['PictureID'];
+    $picture = find_picture_by_id($pictureID);
 }
 
 ?>

@@ -108,7 +108,7 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST'){
         $picture['Name'] = $_POST['Name'];
         $picture['ServiceID'] = $_POST['ServiceID'];
         $picture['URL'] = $_POST['URL'];
-        $result = insert_Picture($picture);
+        $result = insert_picture($picture);
         $newPictureID = mysqli_insert_id($db);
         ?>
         <h2>A new Picture (ID: <?php echo $newPictureID ?>) has been created:</h2>

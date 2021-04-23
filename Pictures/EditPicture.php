@@ -34,15 +34,15 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST'){
         $picture['URL'] = $_POST['URL'];
         $picture['ServiceID'] = $_POST['ServiceID'];
 
-        Update_Picture($Picture);
+        Update_Picture($picture);
         redirect_to('IndexPicture.php');
     }
 } else { // form loaded
     if(!isset($_GET['PictureID'])) {
         redirect_to('IndexPicture.php');
     }
-    $id = $_GET['PictureID'];
-    $picture = find_Picture_by_id($id);
+    $pictureID = $_GET['PictureID'];
+    $picture = find_picture_by_id($pictureID);
 }
 
 ?>
@@ -89,18 +89,18 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST'){
     <form action="<?php echo $_SERVER["PHP_SELF"];?>" method="post">
     
         <input type="hidden" name="PictureID" 
-        value="<?php echo isFormValidated()? $Picture['PictureID']: $_POST['PictureID'] ?>" >
+        value="<?php echo isFormValidated()? $picture['PictureID']: $_POST['PictureID'] ?>" >
 
         <label for="Name">Name</label> <!--required-->
         <input type="text" id="Name" name="Name"  
-        value="<?php echo isFormValidated()? $Picture['Name']: $_POST['Name'] ?>">
+        value="<?php echo isFormValidated()? $picture['Name']: $_POST['Name'] ?>">
         <br><br>
 
         <label for="URL">URL</label> <!--required-->
         <input type="text" id="URL" name="URL"  
-        value="<?php echo isFormValidated()? $Picture['URL']: $_POST['URL'] ?>">
+        value="<?php echo isFormValidated()? $picture['URL']: $_POST['URL'] ?>">
         <input type="file" id="URL" name="URL"  
-        value="<?php echo isFormValidated()? $Picture['URL']: $_POST['URL'] ?>">
+        value="<?php echo isFormValidated()? $picture['URL']: $_POST['URL'] ?>">
         <br><br>
         <label for="ServiceID">Subject:</label>
             <select name="ServiceID">
@@ -117,7 +117,6 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST'){
       
         
         <input type="submit" name="submit" value="Submit">
-        <input type="reset" name="reset" value="Reset">
     
     </form>
     
