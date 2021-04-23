@@ -45,7 +45,7 @@ require_once('../initialize.php');
         <tr>
             <th>Name</th>
             <th>URL</th>
-            <th>Name_Sport</th>
+            <th>Name_Service</th>
             <th>&nbsp;</th>
             <th>&nbsp;</th>
   	    </tr>
