@@ -104,25 +104,25 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST'){
         <br><br>
         <label for="ServiceID">Subject:</label>
         <select>
-            <option value="1"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =='1') echo 'selected' ?>>Indoor Sports</option>              
-            <option value="2"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =='2') echo 'selected' ?>>Outdoor Sports</option>
-            <option value="3"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =="3") echo 'selected' ?>>Recreation</option>
-            <option value="4"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =="4") echo 'selected' ?>>Indoor Sports</option>              
-            <option value="5"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =='5') echo 'selected' ?>>Outdoor Sports</option>
-            <option value="6"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =='6') echo 'selected' ?>>Recreation</option>
-            <option value="7"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =='7') echo 'selected' ?>>Indoor Sports</option>              
-            <option value="8"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =='8') echo 'selected' ?>>Outdoor Sports</option>
-            <option value="9"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =='9') echo 'selected' ?>>Recreation</option>
-            <option value="10"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =='10') echo 'selected' ?>>Indoor Sports</option>              
-            <option value="11"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =='11') echo 'selected' ?>>Outdoor Sports</option>
-            <option value="12"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =='12') echo 'selected' ?>>Recreation</option>
-            <option value="13"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =='13') echo 'selected' ?>>Indoor Sports</option>              
-            <option value="14"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =='14') echo 'selected' ?>>Outdoor Sports</option>
-            <option value="15"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =='15') echo 'selected' ?>>Recreation</option>
-            <option value="16"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =='16') echo 'selected' ?>>Indoor Sports</option>              
-            <option value="17"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =='17') echo 'selected' ?>>Outdoor Sports</option>
-            <option value="18"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =='18') echo 'selected' ?>>Recreation</option> 
-            <option value="19"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =='19') echo 'selected' ?>>Recreation</option>                      
+            <option value="1"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =='1') echo 'selected' ?>>Cầu Lông</option>              
+            <option value="2"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =='2') echo 'selected' ?>>Bóng Chuyền</option>
+            <option value="3"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =="3") echo 'selected' ?>>Bóng Rổ</option>
+            <option value="4"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =="4") echo 'selected' ?>>Đấu Kiếm</option>              
+            <option value="5"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =='5') echo 'selected' ?>>Bóng Bàn</option>
+            <option value="6"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =='6') echo 'selected' ?>>Đá Cầu</option>
+            <option value="7"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =='7') echo 'selected' ?>>Bóng Đá</option>              
+            <option value="8"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =='8') echo 'selected' ?>>Quần Vợt</option>
+            <option value="9"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =='9') echo 'selected' ?>>Nhảy xa</option>
+            <option value="10"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =='10') echo 'selected' ?>>Bóng Chày</option>              
+            <option value="11"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =='11') echo 'selected' ?>>Điền Kinh</option>
+            <option value="12"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =='12') echo 'selected' ?>>Bơi Lội</option>
+            <option value="13"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =='13') echo 'selected' ?>>Food</option>              
+            <option value="14"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =='14') echo 'selected' ?>>Massage</option>
+            <option value="15"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =='15') echo 'selected' ?>>Bi-a</option>
+            <option value="16"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =='16') echo 'selected' ?>>Bar</option>              
+            <option value="17"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =='17') echo 'selected' ?>>Xông Hơi</option>
+            <option value="18"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =='18') echo 'selected' ?>>Yoga</option> 
+            <option value="19"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =='19') echo 'selected' ?>>Movie</option>                      
         </select>       
       
         
