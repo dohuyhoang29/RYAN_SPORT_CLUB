@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST'){
         $picture['URL'] = $_POST['URL'];
         $picture['ServiceID'] = $_POST['ServiceID'];
 
-        Update_Picture($Picture);
+        Update_Picture($picture);
         redirect_to('IndexPicture.php');
     }
 } else { // form loaded
@@ -103,17 +103,27 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST'){
         value="<?php echo isFormValidated()? $picture['URL']: $_POST['URL'] ?>">
         <br><br>
         <label for="ServiceID">Subject:</label>
-            <select name="ServiceID">
-            <option value="1"
-            <?php if(!empty($_POST['ServiceID']) && $_POST['ServiceID'] =='1') echo 'selected' ?>
-            >Indoor Sports</option>              
-            <option value="2"
-            <?php if(!empty($_POST['ServiceID']) && $_POST['ServiceID'] =='2') echo 'selected' ?>
-            >Outdoor Sports</option>
-            <option value="3"
-            <?php if(!empty($_POST['ServiceID']) && $_POST['ServiceID'] =='3') echo 'selected' ?>
-            >Recreation</option>                        
-            </select>       
+        <select>
+            <option value="1"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =='1') echo 'selected' ?>>Indoor Sports</option>              
+            <option value="2"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =='2') echo 'selected' ?>>Outdoor Sports</option>
+            <option value="3"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =="3") echo 'selected' ?>>Recreation</option>
+            <option value="4"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =="4") echo 'selected' ?>>Indoor Sports</option>              
+            <option value="5"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =='5') echo 'selected' ?>>Outdoor Sports</option>
+            <option value="6"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =='6') echo 'selected' ?>>Recreation</option>
+            <option value="7"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =='7') echo 'selected' ?>>Indoor Sports</option>              
+            <option value="8"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =='8') echo 'selected' ?>>Outdoor Sports</option>
+            <option value="9"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =='9') echo 'selected' ?>>Recreation</option>
+            <option value="10"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =='10') echo 'selected' ?>>Indoor Sports</option>              
+            <option value="11"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =='11') echo 'selected' ?>>Outdoor Sports</option>
+            <option value="12"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =='12') echo 'selected' ?>>Recreation</option>
+            <option value="13"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =='13') echo 'selected' ?>>Indoor Sports</option>              
+            <option value="14"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =='14') echo 'selected' ?>>Outdoor Sports</option>
+            <option value="15"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =='15') echo 'selected' ?>>Recreation</option>
+            <option value="16"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =='16') echo 'selected' ?>>Indoor Sports</option>              
+            <option value="17"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =='17') echo 'selected' ?>>Outdoor Sports</option>
+            <option value="18"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =='18') echo 'selected' ?>>Recreation</option> 
+            <option value="19"<?php if(!empty($picture['ServiceID']) && $picture['ServiceID'] =='19') echo 'selected' ?>>Recreation</option>                      
+        </select>       
       
         
         <input type="submit" name="submit" value="Submit">
