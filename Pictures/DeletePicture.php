@@ -35,11 +35,11 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST'){
     <a href="../AdminMenu.php"><img src="../imgs/logo.jpg" alt="logo"></a><?php include('../sharesession.php'); ?><br><br>
     <h1>Delete Picture</h1>
     <h2>Are you sure you want to delete this Picture?</h2>
-    <p><span class="label">Name: </span><?php echo $Picture['Name']; ?></p>
-    <p><span class="label">ServiceID: </span><?php echo $Picture['ServiceID']; ?></p>
-    <p><span class="label">URL: </span><?php echo $Picture['URL']; ?></p>
+    <p><span class="label">Name: </span><?php echo $picture['Name']; ?></p>
+    <p><span class="label">ServiceID: </span><?php echo $picture['ServiceID']; ?></p>
+    <p><span class="label">URL: </span><?php echo $picture['URL']; ?></p>
     <form action="<?php echo $_SERVER["PHP_SELF"];?>" method="post">
-        <input type="hidden" name="PictureID" value="<?php echo $Picture['PictureID']; ?>" >
+        <input type="hidden" name="PictureID" value="<?php echo $picture['PictureID']; ?>" >
      
         <input type="submit" name="submit" value="Delete Picture">
      

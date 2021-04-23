@@ -60,10 +60,10 @@ function find_all_picture(){
     return confirm_query_result($result);
 }
 
-function find_Picture_by_id($id) {
+function find_Picture_by_id($PictureID) {
     global $db;
     $sql = "SELECT * FROM Pictures ";
-    $sql .= "WHERE PictureID='" .$pictureID. "'";
+    $sql .= "WHERE PictureID='" .$PictureID. "'";
     $result = mysqli_query($db, $sql);
 
     confirm_query_result($result);
@@ -71,7 +71,7 @@ function find_Picture_by_id($id) {
     $picture = mysqli_fetch_assoc($result);
     mysqli_free_result($result);
 
-    return $Picture; // returns an assoc. array
+    return $picture; // returns an assoc. array
 }
 
 function Update_Picture($Picture) {
@@ -88,7 +88,7 @@ function Update_Picture($Picture) {
     return confirm_query_result($result);
 }
 
-function Delete_Picture($id) {
+function Delete_Picture($picture) {
     global $db;
 
     $sql = "DELETE FROM Pictures ";
