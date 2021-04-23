@@ -17,7 +17,7 @@ DELETE FROM service WHERE ServiceID = '1';
 INSERT INTO service(Famous_Players, Name, Rules, Time, CategoryID)
 VALUES ("afsda", "Tennis", "alfjlas", 30.0, 1);
 
-DROP TABLE Sports;
+DROP TABLE service;
 
 CREATE TABLE Categories(
 	CategoryID INT AUTO_INCREMENT PRIMARY KEY,
@@ -38,10 +38,10 @@ DROP TABLE Categories;
 
 CREATE TABLE pictures(
 	PictureID INT AUTO_INCREMENT PRIMARY KEY,
-	Name VARCHAR(255) NOT NULL,
+	`Name` VARCHAR(255) NOT NULL,
 	URL TEXT NOT NULL,
 	ServiceID INT,
-	FOREIGN KEY (ServiceID) REFERENCES service(ServiceID) ON DELETE SET NULL;
+	FOREIGN KEY (ServiceID) REFERENCES service(ServiceID) ON DELETE SET NULL
 );
 
 INSERT INTO pictures (Name, URL, ServiceID)
@@ -63,3 +63,15 @@ INSERT INTO admin (userName, password, fullName, phone, email,pass)
 VALUES("afafa", "adsfa", "afaf", 131341324, "afdwefas","asaa");
 
 drop table admin;
+
+SELECT s.name, s.Rules, s.Time, s.Famous_Players, c.Name
+FROM service s INNER JOIN categories c ON s.CategoryID = c.CategoryID;
+
+UPDATE service s INNER JOIN categories c ON s.CategoryID = c.CategoryID
+SET s.Name = 'hoang', s.Rules = 'bo deo biet', s.Time = '123', s.Famous_Players = 'Hoang super pro', s.CategoryID = '1'
+WHERE s.ServiceID = '5';\
+
+
+INSERT INTO pictures (
+	
+);
