@@ -110,12 +110,11 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST'){
     </form>
         <?php if ($_SERVER["REQUEST_METHOD"] == 'POST' && isFormValidated()): ?> 
         <?php 
-        $Picture = [];
-        $Picture['Name'] = $_POST['Name'];
-        $Picture['ServiceID'] = $_POST['ServiceID'];
-        $Picture['URL'] = $_POST['URL'];
-
-        $result = insert_Picture($Picture);
+        $picture = [];
+        $picture['Name'] = $_POST['Name'];
+        $picture['ServiceID'] = $_POST['ServiceID'];
+        $picture['URL'] = $_POST['URL'];
+        $result = insert_Picture($picture);
         $newPictureID = mysqli_insert_id($db);
         ?>
         <h2>A new Picture (ID: <?php echo $newPictureID ?>) has been created:</h2>

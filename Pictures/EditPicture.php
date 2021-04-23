@@ -28,11 +28,11 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST'){
     checkForm();
     if (isFormValidated()){
         //do update
-        $Picture = [];
-        $Picture['PictureID'] = $_POST['PictureID'];
-        $Picture['Name'] = $_POST['Name'];
-        $Picture['URL'] = $_POST['URL'];
-        $Picture['ServiceID'] = $_POST['ServiceID'];
+        $picture = [];
+        $picture['PictureID'] = $_POST['PictureID'];
+        $picture['Name'] = $_POST['Name'];
+        $picture['URL'] = $_POST['URL'];
+        $picture['ServiceID'] = $_POST['ServiceID'];
 
         Update_Picture($Picture);
         redirect_to('IndexPicture.php');
@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST'){
         redirect_to('IndexPicture.php');
     }
     $id = $_GET['PictureID'];
-    $Picture = find_Picture_by_id($id);
+    $picture = find_Picture_by_id($id);
 }
 
 ?>

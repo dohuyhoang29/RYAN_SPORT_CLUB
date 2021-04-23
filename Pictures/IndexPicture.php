@@ -25,13 +25,18 @@ require_once('../initialize.php');
         border: 1px solid #0055DD;
         background: #0055DD;
         color: white;
-        text-align: left;
+        text-align: center;
         }
-        img{
+        img{s
             text-align:array_multisort;
             height: 150px;
             width: 150px;
         }
+        ass{
+            width: 40%;
+            height: 40%;
+        }
+        
     </style>
 </head>
 <body>
@@ -39,8 +44,7 @@ require_once('../initialize.php');
         redirect_to('Admin/LoginRYAN.php');
     endif;?>
     <a href="../AdminMenu.php"><img src="../imgs/logo.jpg" alt="logo"></a><?php include('../sharesession.php'); ?><br><br>
-
-    <a href="NewPicture.php">Create New Picture</a> <br><br>
+    <a href="NewPicture.php">Create New Picture</a> <br><br><
     <table class="list">
         <tr>
             <th>Name</th>

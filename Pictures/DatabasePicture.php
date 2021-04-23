@@ -32,15 +32,15 @@ function confirm_query_result($result){
     }
 }
 
-function insert_Picture($Picture) {
+function insert_Picture($picture) {
     global $db;
 
     $sql = "INSERT INTO Pictures ";
     $sql .= "(Name, URL, ServiceID) ";
     $sql .= "VALUES (";
-    $sql .= "'" . $Picture['Name'] . "',"; //be careful of single quotes
-    $sql .= "'../imgs/" . $Picture['URL'] . "',";//be careful of single quotes
-    $sql .= "'" . $Picture['ServiceID'] . "'";//be careful of single quotes
+    $sql .= "'" . $picture['Name'] . "',"; //be careful of single quotes
+    $sql .= "'../imgs/" . $picture['URL'] . "',";//be careful of single quotes
+    $sql .= "'" . $picture['ServiceID'] . "'";//be careful of single quotes
     $sql .= ")";
     $result = mysqli_query($db, $sql);
 
@@ -52,15 +52,17 @@ function find_all_picture(){
     // SELECT p.PictureID, p.URL, p.Name, s.Name
     // FROM pictures p INNER JOIN 
 	// service s ON p.ServiceID = s.ServiceID;
+    // $sql = "SELECT s.ServiceID, s.name, s.Rules, s.Time, s.Famous_Players, c.Name
+    // FROM service s INNER JOIN categories c ON s.CategoryID = c.CategoryID; ";
 
-    $sql = "SELECT  s.name,p.URL, p.Name  FROM pictures p INNER JOIN  service s ";
-    $sql .="ON p.ServiceID = s.ServiceID";
-    // $sql .= "ORDER BY Name ";
+    $sql  ="SELECT p.PictureID ,s.name ,p.URL, p.Name 
+            FROM pictures p INNER JOIN  service s 
+            ON p.ServiceID  = s.ServiceID";
     $result = mysqli_query($db, $sql); 
-    return confirm_query_result($result);
+    return $result;
 }
 
-function find_Picture_by_id($id) {
+function find_Picture_by_id ($id) {
     global $db;
     $sql = "SELECT * FROM Pictures ";
     $sql .= "WHERE PictureID='" .$id. "'";
@@ -71,24 +73,32 @@ function find_Picture_by_id($id) {
     $Picture = mysqli_fetch_assoc($result);
     mysqli_free_result($result);
 
-    return $Picture; // returns an assoc. array
+    return $Picture; 
 }
 
-function Update_Picture($Picture) {
+function Update_Picture($picture) {
     global $db;
 
-    $sql = "UPDATE Pictures SET ";
-    $sql .= "Name='" . $Picture['Name'] . "', ";
-    $sql .= "ServiceID='" . $Picture['ServiceID'] . "', ";
-    $sql .= "URL='" . $Picture['URL'] . "' ";
-    $sql .= "WHERE PictureID='" . $Picture['PictureID']. "' ";
-    $sql .= "LIMIT 1";
+    // $sql = "UPDATE Pictures SET ";
+    // $sql .= "Name='" . $Picture['Name'] . "', ";
+    // $sql .= "ServiceID='" . $Picture['ServiceID'] . "', ";
+    // $sql .= "URL='" . $Picture['URL'] . "' ";
+    // $sql .= "WHERE PictureID='" . $Picture['PictureID']. "' ";
+    // $sql .= "LIMIT 1";
+
+        $sql = "UPDATE Pictures p INNER JOIN service s ON p.PictureID = s.serviceID ";
+        $sql .= "SET ";
+        $sql .= "p.Name = '" . $picture['Name'] . "', ";
+        $sql .= "p.Famous_Players = '" . $picture['ServiceID'] . "', ";
+        $sql .= "p.CategoryID = '" . $picture['URL'] . "' ";
+        $sql .= "WHERE p.PictureID = '" . $picture['PictureID'] . "' ";
+        $sql .= "LIMIT 1;";
 
     $result = mysqli_query($db, $sql);
     return confirm_query_result($result);
 }
 
-function Delete_Picture($id) {
+    function Delete_Picture($id) {
     global $db;
 
     $sql = "DELETE FROM Pictures ";
