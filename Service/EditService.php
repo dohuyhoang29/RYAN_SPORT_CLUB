@@ -7,18 +7,7 @@
     function checkForm(){
         global $error;
 
-        if(empty($_POST['Name'])){
-            $error[] = 'Name must br required';
-        }
-        if(empty($_POST['Rules'])){
-            $error[] = 'Rules must be required';
-        }
-        if(empty($_POST['Time'])){
-            $error[] = 'Time must be required';
-        }
-        if(empty($_POST['Famous_Players'])){
-            $error[] = 'Famous must be required';
-        }
+        
     }
     
     function isFormValidated(){
@@ -85,8 +74,12 @@
         <label for="name">Name </label>
         <input type="text" name="Name" value="<?php echo isFormValidated() ? $service['Name'] : $_POST['Name']; ?>"><br>
 
-        <label for="rules">Rules </label>
-        <input type="text" name="Rules" value="<?php echo isFormValidated() ? $service['Rules'] : $_POST['Rules']; ?>"><br>
+        <label for="CategoryID">CategoryID </label>
+        <select name="CategoryID">
+            <option value="1"<?php if(!empty($service['CategoryID']) && $service['CategoryID'] =='1') echo 'selected' ?>>Indoor Sports</option>              
+            <option value="2"<?php if(!empty($service['CategoryID']) && $service['CategoryID'] =='2') echo 'selected' ?>>Outdoor Sports</option>
+            <option value="3"<?php if(!empty($service['CategoryID']) && $service['CategoryID'] =='3') echo 'selected' ?>>Recreation</option>   
+        </select><br>
 
         <label for="time">Time </label>
         <input type="text" name="Time" value="<?php echo isFormValidated() ? $service['Time'] : $_POST['Time']; ?>"><br>
@@ -94,8 +87,8 @@
         <label for="famous">Famous Players</label>
         <input type="text" name="Famous_Players" value="<?php echo isFormValidated() ? $service['Famous_Players'] : $_POST['Famous_Players']; ?>"><br>
 
-        <label for="CategoryID">CategoryID </label>
-        <input type="text" name="CategoryID" value="<?php echo isFormValidated() ? $service['CategoryID'] : $_POST['CategoryID']; ?>"><br>
+        <label for="rules">Rules </label>
+        <textarea name="Rules" cols="30" rows="10"><?php echo isFormValidated() ? $service['Rules'] : $_POST['Rules']; ?></textarea><br>
 
         <input type="submit" name="submit" value="Edit">
     </form>

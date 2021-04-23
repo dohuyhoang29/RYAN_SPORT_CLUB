@@ -90,16 +90,10 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST'){
             ?php  echo isFormValidated()? '': $_POST['ServiceID'] ?>"> -->
         <label for="ServiceID">Subject:</label>
             <select name="ServiceID">
-            <option value="1"
-            <?php if(!empty($_POST['ServiceID']) && $_POST['ServiceID'] =='1') echo 'selected' ?>
-            >Indoor Sports</option>              
-            <option value="2"
-            <?php if(!empty($_POST['ServiceID']) && $_POST['ServiceID'] =='2') echo 'selected' ?>
-            >Outdoor Sports</option>
-            <option value="3"
-            <?php if(!empty($_POST['ServiceID']) && $_POST['ServiceID'] =='3') echo 'selected' ?>
-            >Recreation</option>                        
-            </select>       
+            <option value="1"<?php if(!empty($_POST['ServiceID']) && $_POST['ServiceID'] =='1') echo 'selected' ?>>Indoor Sports</option>              
+            <option value="2"<?php if(!empty($_POST['ServiceID']) && $_POST['ServiceID'] =='2') echo 'selected' ?>>Outdoor Sports</option>
+            <option value="3"<?php if(!empty($_POST['ServiceID']) && $_POST['ServiceID'] =='3') echo 'selected' ?>>Recreation</option>                        
+        </select>       
         <br><br>
         <input type="file" name="URL" id="URL"
         value = "<?php echo isFormValidated()? $_POST['URL']: $_POST['URL'] ?>">
@@ -110,12 +104,11 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST'){
     </form>
         <?php if ($_SERVER["REQUEST_METHOD"] == 'POST' && isFormValidated()): ?> 
         <?php 
-        $Picture = [];
-        $Picture['Name'] = $_POST['Name'];
-        $Picture['ServiceID'] = $_POST['ServiceID'];
-        $Picture['URL'] = $_POST['URL'];
-
-        $result = insert_Picture($Picture);
+        $picture = [];
+        $picture['Name'] = $_POST['Name'];
+        $picture['ServiceID'] = $_POST['ServiceID'];
+        $picture['URL'] = $_POST['URL'];
+        $result = insert_Picture($picture);
         $newPictureID = mysqli_insert_id($db);
         ?>
         <h2>A new Picture (ID: <?php echo $newPictureID ?>) has been created:</h2>
