@@ -53,7 +53,7 @@ function find_all_picture(){
     // FROM pictures p INNER JOIN 
 	// service s ON p.ServiceID = s.ServiceID;
 
-    $sql = "SELECT  s.name,p.URL, p.Name  FROM pictures p INNER JOIN  service s ";
+    $sql = "SELECT p.PictureID, s.name,p.URL, p.Name  FROM pictures p INNER JOIN  service s ";
     $sql .="ON p.ServiceID = s.ServiceID";
     // $sql .= "ORDER BY Name ";
     $result = mysqli_query($db, $sql); 

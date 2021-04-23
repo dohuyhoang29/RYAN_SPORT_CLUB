@@ -86,8 +86,7 @@
         <input type="text" name="Name" value="<?php echo isFormValidated() ? $service['Name'] : $_POST['Name']; ?>"><br>
 
         <label for="rules">Rules </label>
-        <input type="text" name="Rules" value="<?php echo isFormValidated() ? $service['Rules'] : $_POST['Rules']; ?>"><br>
-
+        <textarea name="Rules" cols="30" rows="10"><?php echo isFormValidated() ? $service['Rules'] : $_POST['Rules']; ?></textarea><br>
         <label for="time">Time </label>
         <input type="text" name="Time" value="<?php echo isFormValidated() ? $service['Time'] : $_POST['Time']; ?>"><br>
 
