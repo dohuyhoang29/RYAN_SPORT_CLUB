@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST'){
 <body>
     <?php 
         if($admin['username'] === $_SESSION['username']){
-            $_SESSION['delete'] = 'You cannot delete your name!';
+            // $_SESSION['delete'] = 'You cannot delete your name!';
             redirect_to('IndexRYAN.php');
         }else{
             unset($_SESSION['delete']);

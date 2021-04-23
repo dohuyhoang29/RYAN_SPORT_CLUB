@@ -10,7 +10,7 @@ function isFormValidated(){
 
 if ($_SERVER["REQUEST_METHOD"] == 'POST'){
     if (empty($_POST['Name'])){
-        $errors[] = 'Book Name is required';
+        $errors[] = 'Name is required';
     }
 
     if (empty($_POST['URL'])){

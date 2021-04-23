@@ -56,7 +56,7 @@ endif;?>
 
         <tr>
                 <td><?php echo $admin['username'];?></td>
-                <td><?php echo $admin['password'];?></td>
+                <td><?php echo $admin['pass'];?></td>
                 <td><?php echo $admin['fullname'];?></td>
                 <td><?php echo $admin['phone'];?></td>
                 <td><?php echo $admin['email'];?></td>
