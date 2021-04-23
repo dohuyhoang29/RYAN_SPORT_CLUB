@@ -89,18 +89,18 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST'){
     <form action="<?php echo $_SERVER["PHP_SELF"];?>" method="post">
     
         <input type="hidden" name="PictureID" 
-        value="<?php echo isFormValidated()? $Picture['PictureID']: $_POST['PictureID'] ?>" >
+        value="<?php echo isFormValidated()? $picture['PictureID']: $_POST['PictureID'] ?>" >
 
         <label for="Name">Name</label> <!--required-->
         <input type="text" id="Name" name="Name"  
-        value="<?php echo isFormValidated()? $Picture['Name']: $_POST['Name'] ?>">
+        value="<?php echo isFormValidated()? $picture['Name']: $_POST['Name'] ?>">
         <br><br>
 
         <label for="URL">URL</label> <!--required-->
         <input type="text" id="URL" name="URL"  
-        value="<?php echo isFormValidated()? $Picture['URL']: $_POST['URL'] ?>">
+        value="<?php echo isFormValidated()? $picture['URL']: $_POST['URL'] ?>">
         <input type="file" id="URL" name="URL"  
-        value="<?php echo isFormValidated()? $Picture['URL']: $_POST['URL'] ?>">
+        value="<?php echo isFormValidated()? $picture['URL']: $_POST['URL'] ?>">
         <br><br>
         <label for="ServiceID">Subject:</label>
             <select name="ServiceID">
