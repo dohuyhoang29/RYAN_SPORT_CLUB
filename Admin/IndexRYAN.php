@@ -64,13 +64,25 @@ endif;?>
                 <td><a href="<?php echo 'DeleteRYAN.php?username='.$admin['username']; ?>">Delete</a></td>
         </tr>
 
+        
+
         <?php
             endfor;
             mysqli_free_result($admin_set);
         ?>
     </table>
+
+    <p>
+        <?php 
+            if(isset($_SESSION['delete'])){
+                echo $_SESSION['delete'];
+            }
+        ?>
+    </p>
+
 </body>
 </html>
+
 
 <?php
     db_disconnect($db);

@@ -29,6 +29,14 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST'){
     </style>
 </head>
 <body>
+    <?php 
+        if($admin['username'] === $_SESSION['username']){
+            $_SESSION['delete'] = 'You cannot delete your name!';
+            redirect_to('IndexRYAN.php');
+        }else{
+            unset($_SESSION['delete']);
+        }
+    ?>
 
     <?php if(!isset($_SESSION['username'])):
         redirect_to('LoginRYAN.php');
@@ -51,6 +59,9 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST'){
     
     <br><br>
     <a href="IndexRYAN.php">Back to Index Admin </a>
+
+    
+    
 </body>
 </html>
 
