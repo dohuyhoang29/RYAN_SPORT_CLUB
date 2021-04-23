@@ -7,18 +7,7 @@
     function checkForm(){
         global $error;
 
-        if(empty($_POST['Name'])){
-            $error[] = 'Name must br required';
-        }
-        if(empty($_POST['Rules'])){
-            $error[] = 'Rules must be required';
-        }
-        if(empty($_POST['Time'])){
-            $error[] = 'Time must be required';
-        }
-        if(empty($_POST['Famous_Players'])){
-            $error[] = 'Famous must be required';
-        }
+        
     }
     
     function isFormValidated(){
