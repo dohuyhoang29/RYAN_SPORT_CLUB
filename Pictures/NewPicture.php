@@ -76,7 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST'){
     <?php if(!isset($_SESSION['username'])):
         redirect_to('Admin/LoginRYAN.php');
     endif;?>
-    <a href="../AdminMenu.php"><img src="../imgs/logo.jpg" alt="logo"></a><?php include('../sharesession.php'); ?><br><br>
+    <a href="../AdminMenu.php"><img src="../imgs/r.svg" alt="logo"></a><?php include('../sharesession.php'); ?><br><br>
     
     <form action="<?php echo $_SERVER["PHP_SELF"];?>" method="post">
         <label for="Name">Name</label> <!--required-->
@@ -111,7 +111,7 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST'){
                 <option value="19"<?php if(!empty($_POST['ServiceID']) && $_POST['ServiceID'] =='19') echo 'selected' ?>>Movie</option>                      
             </select>       
         <br><br>
-        <input type="file" name="URL" id="URL"
+        <input type="file" name="URL" id="URL" multiple
         value = "<?php echo isFormValidated()? $_POST['URL']: $_POST['URL'] ?>">
         <br><br>
         <input type="submit" name="submit" value="Submit">

@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST'){
 <body>
     <?php 
         if($admin['username'] === $_SESSION['username']){
-            $_SESSION['delete'] = 'You cannot delete your name!';
+            $_SESSION['Delete']; //= 'You cannot delete your name!';
             redirect_to('IndexRYAN.php');
         }else{
             unset($_SESSION['delete']);
@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST'){
     <h2>Are you sure you want to delete this admin?</h2>
     <p><span class="label">Username </span><?php echo $admin['username']; ?></p>
     <p><span class="label">Password </span><?php echo $admin['pass']; ?></p>
-    <p><span class="label">FUllname </span><?php echo $admin['fullname']; ?></p>
+    <p><span class="label">Fullname </span><?php echo $admin['fullname']; ?></p>
     <p><span class="label">email </span><?php echo $admin['email']; ?></p>
     <p><span class="label">Phone </span><?php echo $admin['phone']; ?></p>
     <form action="<?php echo $_SERVER["PHP_SELF"];?>" method="post">

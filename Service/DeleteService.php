@@ -25,7 +25,7 @@
     <?php if(!isset($_SESSION['username'])):
         redirect_to('Admin/LoginRYAN.php');
     endif;?>
-    <a href="../AdminMenu.php"><img src="../imgs/logo.jpg" alt="logo"></a><?php include('../sharesession.php'); ?><br><br>
+    <a href="../AdminMenu.php"><img src="../imgs/r.svg" alt="logo"></a><?php include('../sharesession.php'); ?><br><br>
 
     <h1>Delete Service</h1>
     <h2>Are you sure you want to delete this service?</h2>

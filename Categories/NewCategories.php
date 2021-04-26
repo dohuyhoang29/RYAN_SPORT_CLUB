@@ -22,50 +22,59 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 <head>
     <meta charset="UTF-8">
     <title> Index Categories</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
     <style>
-        .s,label{
-            float:left;
-            clear:left;
-        }
-        label{
-            width:10%;
-        }
-        input{
-            float:left;
-        }
-        .s{
-            margin-right: 7%;
-        }
-        input,label{
-            margin:5px;
+        body {font-family: Arial, Helvetica, sans-serif;}
+        * {box-sizing: border-box;}
 
+        .input-container {
+        display: -ms-flexbox; /* IE10 */
+        display: flex;
+        width: 100%;
+        margin-bottom: 15px;
         }
-        .categories{
-            float:left;
-            clear:left;
 
+        .icon {
+        padding: 10px;
+        background: dodgerblue;
+        color: white;
+        min-width: 50px;
+        text-align: center;
         }
-        label {
-            font-weight: bold;
+
+        .input-field {
+        width: 100%;
+        padding: 10px;
+        outline: none;
         }
-        .error {
-            color: blue;
+
+        .input-field:focus {
+        border: 2px solid dodgerblue;
         }
-        div.error{
-            border: thin solid blue; 
-            display: inline-block;
-            padding: 5px;
-            background: darkgray;
+
+        /* Set a style for the submit button */
+        .ltn {
+        background-color: dodgerblue;
+        color: white;
+        padding: 15px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
         }
-        fieldset{
-            background: lightgray;
-            border:  1px solid blue;
-            /* margin:  30px 0; */
-            padding:  15px;
+        .n{
+        background-color: blue;
+        color: white;
+        padding: 15px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
         }
-        form{
-            width: 40%;
-            
+
+        .btn:hover {
+        opacity: 1;
         }
     </style>
 </head>
@@ -74,19 +83,71 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         redirect_to('Admin/LoginRYAN.php');
     endif;?>
 
-    <a href="../AdminMenu.php"><img src="../imgs/logo.jpg" alt="logo"></a><?php include('../sharesession.php'); ?><br><br>
-    <a href="IndexCategories.php">Index categories</a><br><br>
+<nav class="navbar navbar-inverse">
+
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <img src="../imgs/L.png" alt="logo">
+        </div>
+
+        <ul class="nav navbar-nav">
+            <li class="active">
+
+            <!-- <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="Categories/IndexCategories.php">Category
+                <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                <li><a href="#">Page 1-1</a></li>
+                <li><a href="#">Page 1-2</a></li>
+                <li><a href="#">Page 1-3</a></li>
+                </ul>
+            </li>         -->
+            <li><a href="Categories/IndexCategories.php">Categories</a></li>
+            <li><a href="Service/IndexService.php">Service</a></li>
+            <li><a href="Pictures/IndexPicture.php">Pictures</a></li>
+            <li><a href="Admin/IndexRYAN.php">Admin</a></li>
+
+        </ul>
+            
+
+        <ul class="nav navbar-nav navbar-right">
+            <!-- <li><a href="Admin/LoginRYAN.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> -->
+            <li><a <?php if(!isset($_SESSION['username'])):
+                    redirect_to('LoginRYAN.php');
+                    endif;?>>
+            <!-- <span class="glyphicon glyphicon-log-in"></span> Login</a></li> -->
+            <li><?php include('../sharesession.php'); ?></li>
+        </ul>
+
+        <form class="navbar-form navbar-right" role="search">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Search</button>
+            <!-- <span class="glyphicon glyphicon-search"></span> -->
+    </form> 
+
+    </div>
+</nav>
     
-    <form action="<?php echo $_SERVER["PHP_SELF"];?>" method="post">
-    <fieldset>
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" 
-        value="<?php echo isFormValidated()? '': $_POST['name'] ?>">
-        
-        <input type="submit" class="s">
-        <input type="reset">
-    </fieldset>
-    </form>
+<form action="<?php echo $_SERVER["PHP_SELF"]?>" method="post" style="max-width:500px;margin:auto">
+<div class="imgcontainer">
+      <img src="../imgs/logo.svg" alt="Avatar" class="avatar">
+    </div>
+<h2>New Categories</h2>
+  <div class="input-container">
+    <i class="fa fa-user icon"></i>
+    <input class="input-field" type="text" placeholder="Name" name="name" value="<?php echo isFormValidated()? '': $_POST['name'] ?>">
+  </div>
+  
+  <button type="submit" class="ltn">Submit</button>
+
+  <button type="reset" class="n">Reset</button>
+<br>
+  <button><a href="IndexCategories.php">Back to Index</a></button> <br><br>
+
+</form>
+
     <?php if ($_SERVER["REQUEST_METHOD"] == 'POST' && isFormValidated()): ?>
             <?php
                 $categories = [];
@@ -124,7 +185,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         </div>
     <?php endif; ?>
 
-
+    <script src="../js/jquery-2.2.4.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
 </body>
 </html>
 

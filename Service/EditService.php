@@ -65,7 +65,7 @@
     <?php if(!isset($_SESSION['username'])):
         redirect_to('Admin/LoginRYAN.php');
     endif;?>
-    <a href="../AdminMenu.php"><img src="../imgs/logo.jpg" alt="logo"></a><?php include('../sharesession.php'); ?><br><br>
+    <a href="../AdminMenu.php"><img src="../imgs/r.svg" alt="logo"></a><?php include('../sharesession.php'); ?><br><br>
 
     <h1>Create a new Service</h1>
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
@@ -75,11 +75,27 @@
         <input type="text" name="Name" value="<?php echo isFormValidated() ? $service['Name'] : $_POST['Name']; ?>"><br>
 
         <label for="CategoryID">CategoryID </label>
-        <select name="CategoryID">
+        <!-- <select name="CategoryID">
             <option value="1"<?php if(!empty($service['CategoryID']) && $service['CategoryID'] =='1') echo 'selected' ?>>Indoor Sports</option>              
             <option value="2"<?php if(!empty($service['CategoryID']) && $service['CategoryID'] =='2') echo 'selected' ?>>Outdoor Sports</option>
             <option value="3"<?php if(!empty($service['CategoryID']) && $service['CategoryID'] =='3') echo 'selected' ?>>Recreation</option>   
-        </select><br>
+        </select><br> -->
+
+        <select name="CateroryID">
+        <?php
+        $service_set = find_all_service();
+        $count = mysqli_num_rows($service_set);
+        for ($i = 0; $i < $count; $i++):
+            $service = mysqli_fetch_assoc($service_set); 
+        ?>
+            
+            <option 
+            value="<?php echo $service['ServiceID'] ?>" ><?php echo $service['Name'] ?></option>
+        <?php 
+        endfor; 
+        mysqli_free_result($service_set);
+        ?>
+        </select>
 
         <label for="time">Time </label>
         <input type="text" name="Time" value="<?php echo isFormValidated() ? $service['Time'] : $_POST['Time']; ?>"><br>

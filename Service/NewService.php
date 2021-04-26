@@ -42,7 +42,7 @@
     <?php if(!isset($_SESSION['username'])):
         redirect_to('Admin/LoginRYAN.php');
     endif;?>
-    <a href="../AdminMenu.php"><img src="../imgs/logo.jpg" alt="logo"></a><?php include('../sharesession.php'); ?>
+    <a href="../AdminMenu.php"><img src="../imgs/r.svg" alt="logo"></a><?php include('../sharesession.php'); ?>
 
     <h1>Create a new Service</h1>
     

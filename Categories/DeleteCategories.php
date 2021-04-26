@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST'){
         redirect_to('Admin/LoginRYAN.php');
     endif;?>
     
-    <a href="../AdminMenu.php"><img src="../imgs/logo.jpg" alt="logo"></a><?php include('../sharesession.php'); ?><br><br>
+    <a href="../AdminMenu.php"><img src="../imgs/r.svg" alt="logo"></a><?php include('../sharesession.php'); ?><br><br>
     <h1>Delete categories</h1>
     <h2>Are you sure you want to delete this categories?</h2>
     <p><span class="label">Name: </span><?php echo $categories['Name']; ?></p>

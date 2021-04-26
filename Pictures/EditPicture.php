@@ -84,7 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST'){
     <?php if(!isset($_SESSION['username'])):
         redirect_to('Admin/LoginRYAN.php');
     endif;?>
-    <a href="../AdminMenu.php"><img src="../imgs/logo.jpg" alt="logo"></a><?php include('../sharesession.php'); ?><br><br>
+    <a href="../AdminMenu.php"><img src="../imgs/r.svg" alt="logo"></a><?php include('../sharesession.php'); ?><br><br>
     
     <form action="<?php echo $_SERVER["PHP_SELF"];?>" method="post">
     
@@ -99,7 +99,7 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST'){
         <label for="URL">URL</label> <!--required-->
         <input type="text" id="URL" name="URL"  
         value="<?php echo isFormValidated()? $picture['URL']: $_POST['URL'] ?>">
-        <input type="file" id="URL" name="URL"  
+        <input type="file" id="URL" name="URL" multiple 
         value="<?php echo isFormValidated()? $picture['URL']: $_POST['URL'] ?>">
         <br><br>
         <label for="ServiceID">Subject:</label>
@@ -124,6 +124,8 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST'){
             <option value="18"<?php if((!empty($picture['ServiceID']) && $picture['ServiceID'] =='18') || (!empty($_POST['ServiceID']) && $_POST['ServiceID'] =="18")) echo 'selected' ?>>Yoga</option> 
             <option value="19"<?php if((!empty($picture['ServiceID']) && $picture['ServiceID'] =='19') || (!empty($_POST['ServiceID']) && $_POST['ServiceID'] =="19")) echo 'selected' ?>>Movie</option>                      
         </select>       
+
+        
       
         
         <input type="submit" name="submit" value="Submit">

@@ -3,11 +3,14 @@
 require_once('DatabaseCategories.php');
 require_once('../initialize.php');
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <title>index categories</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
     <style>
         table {
         border-collapse: collapse;
@@ -35,7 +38,7 @@ require_once('../initialize.php');
         redirect_to('Admin/LoginRYAN.php');
     endif;?>
 
-    <a href="../AdminMenu.php"><img src="../imgs/logo.jpg" alt="logo"></a><?php include('../sharesession.php'); ?><br><br>
+    <a href="../AdminMenu.php"><img src="../imgs/r.svg" alt="logo"></a><?php include('../sharesession.php'); ?><br><br>
 
     <a href="NewCategories.php">Create new categories</a> <br><br>
     <table class="list">
@@ -65,6 +68,9 @@ require_once('../initialize.php');
         
         ?>
     </table>
+
+    <script src="../js/jquery-2.2.4.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
 </body>
 </html>
 
